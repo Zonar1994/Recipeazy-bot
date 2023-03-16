@@ -3,12 +3,8 @@ import openai
 
 client = discord.Client(intents=discord.Intents().all())
 
-# Set up the OpenAI API
-openai.api_key = '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'
-
-# Define the virtual chef's name and the model ID for ChatGPT
+# Define the virtual chef's name
 chef_name = 'Virtual Chef'
-model_id = 'Ramsey'
 
 # Handle incoming messages from users
 @client.event
@@ -19,7 +15,7 @@ async def on_message(message):
     # Generate a response using ChatGPT
     prompt = f'{chef_name}: {message.content}'
     response = openai.Completion.create(
-        engine=model_id,
+        engine="text-davinci-003",
         prompt=prompt,
         max_tokens=1024,
         n=1,
