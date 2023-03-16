@@ -2,7 +2,7 @@ import discord
 import openai
 
 client = discord.Client(intents=discord.Intents().all())
-
+openai.api_key = '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'
 # Define the virtual chef's name
 chef_name = 'Virtual Chef'
 
